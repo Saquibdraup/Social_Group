@@ -1,0 +1,7 @@
+Flask
+MongoEngine
+Falsk-JWT-Extended
+flask-Restful
+flask-bcrypt
+python-dotenv
+Celery

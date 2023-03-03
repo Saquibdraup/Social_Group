@@ -1,7 +1,13 @@
-from .SocialGroup import UsersApi, UserApi
+from .socialgrp import GroupApi, GroupsApi
+from .auth import SignupApi, LoginApi
+from .Posts import PostApi, PostsApi
 def initialize_routes(api):
-    api.add_resource(UserApi, '/api/SG')
-    api.add_resource(UsersApi, '/api/SG/<id>')
+    api.add_resource(GroupApi, '/api/group')
+    api.add_resource(GroupsApi, '/api/groups/<id>')
+    api.add_resource(SignupApi, '/api/auth/signup')
+    api.add_resource(LoginApi, '/api/auth/login')
+    api.add_resource(PostApi, '/api/post')
+    api.add_resource(PostsApi, '/api/posts/<id>')
 
 
 

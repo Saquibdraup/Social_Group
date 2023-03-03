@@ -4,9 +4,9 @@ import kwargs
 
 
 class User(db.Document):
-    name = db.StingField(required=True, unique=True)
+    name = db.StringField(required=True, unique=True)
     email = db.EmailField(required=True, Unique=True)
-    password = db.StringFirld(required=True, min_length=8)
+    password = db.StringField(required=True, min_length=8)
     groups = db.ListField(db.StringField, required=True)
 
     def hash_password(self):
@@ -60,8 +60,8 @@ class Posts(db.Document):
     content = db.StringField(required=True)
     author = db.StringField(required=True, Unique=True)
     group = db.StringField(required=True, Unique=True)
-    comments = db.Listfield(db.StringField, required=True)
-    Date_Time = db.DateTimeField(required=True, separator=',', **kwargs)
+    comments = db.ListField(db.StringField, required=True)
+    Date_Time = db.DateTimeField(required=True)
 
     def add_comment(self, comment):
         self.comments.append(comment)
@@ -72,6 +72,6 @@ class Comment(db.Document):
     content = db.StringField(required=True, Unique=True)
     C_author = db.StringField(required=True, Unique=True)
     C_post = db.StringField(required=True, Unique=True)
-    C_Date_Time = db.DateTimeField(required=True, seprator=',', **kwargs)
+    C_Date_Time = db.DateTimeField(required=True)
 
 
